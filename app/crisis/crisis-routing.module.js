@@ -9,20 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v3)';
+var router_1 = require('@angular/router');
+var crisis_list_component_1 = require('./crisis-list.component');
+var crisis_detail_component_1 = require('./crisis-detail.component');
+var routes = [
+    { path: '', redirectTo: 'list', pathMatch: 'full' },
+    { path: 'list', component: crisis_list_component_1.CrisisListComponent },
+    { path: ':id', component: crisis_detail_component_1.CrisisDetailComponent }
+];
+var CrisisRoutingModule = (function () {
+    function CrisisRoutingModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n    \t<nav>\n        <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n    \t\t<a routerLink=\"/crisis\" routerLinkActive=\"active\">Crisis</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
+    CrisisRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forChild(routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CrisisRoutingModule);
+    return CrisisRoutingModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisRoutingModule = CrisisRoutingModule;
+//# sourceMappingURL=crisis-routing.module.js.map

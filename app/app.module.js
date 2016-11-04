@@ -13,18 +13,13 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require("@angular/http");
 var app_component_1 = require('./app.component');
-var heroes_component_1 = require('./heroes.component');
-var hero_detail_component_1 = require('./hero-detail.component');
-var hero_service_1 = require('./hero.service');
-var dashboard_component_1 = require('./dashboard.component');
-var hero_search_component_1 = require('./hero-search.component');
-var app_routing_module_1 = require('./app-routing.module');
-var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
-var in_memory_data_service_1 = require('./in-memory-data.service');
 var highlight_directive_1 = require('./highlight.directive');
 var title_component_1 = require('./title.component');
 var user_service_1 = require('./user.service');
+/* Feature Modules */
 var contact_module_1 = require('./contact/contact.module');
+/* Routing Module */
+var app_routing_module_1 = require('./app-routing.module');
 require('./rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
@@ -36,20 +31,14 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 app_routing_module_1.AppRoutingModule,
                 http_1.HttpModule,
-                angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 contact_module_1.ContactModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                heroes_component_1.HeroesComponent,
-                hero_detail_component_1.HeroDetailComponent,
-                dashboard_component_1.DashboardComponent,
-                hero_search_component_1.HeroSearchComponent,
                 highlight_directive_1.HighlightDirective,
                 title_component_1.TitleComponent
             ],
             providers: [
-                hero_service_1.HeroService,
                 user_service_1.UserService,
             ],
             bootstrap: [app_component_1.AppComponent]

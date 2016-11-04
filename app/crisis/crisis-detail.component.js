@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v3)';
+var router_1 = require('@angular/router');
+var CrisisDetailComponent = (function () {
+    function CrisisDetailComponent(route) {
+        this.route = route;
     }
-    AppComponent = __decorate([
+    CrisisDetailComponent.prototype.ngOnInit = function () {
+        this.id = parseInt(this.route.snapshot.params['id'], 10);
+    };
+    CrisisDetailComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n    \t<nav>\n        <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n    \t\t<a routerLink=\"/crisis\" routerLinkActive=\"active\">Crisis</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
+            template: "\n    <h3 highlight>Crisis Detail</h3>\n    <div>Crisis id: {{id}}</div>\n    <br>\n    <a routerLink=\"../list\">Crisis List</a>\n  "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [router_1.ActivatedRoute])
+    ], CrisisDetailComponent);
+    return CrisisDetailComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisDetailComponent = CrisisDetailComponent;
+//# sourceMappingURL=crisis-detail.component.js.map

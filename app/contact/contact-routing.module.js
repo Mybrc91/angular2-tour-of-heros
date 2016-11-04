@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v3)';
+var router_1 = require('@angular/router');
+var contact_component_1 = require('./contact.component');
+var ContactRoutingModule = (function () {
+    function ContactRoutingModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n    \t<nav>\n        <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n    \t\t<a routerLink=\"/crisis\" routerLinkActive=\"active\">Crisis</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
+    ContactRoutingModule = __decorate([
+        core_1.NgModule({
+            imports: [router_1.RouterModule.forChild([
+                    { path: 'contact', component: contact_component_1.ContactComponent }
+                ])],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], ContactRoutingModule);
+    return ContactRoutingModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.ContactRoutingModule = ContactRoutingModule;
+//# sourceMappingURL=contact-routing.module.js.map

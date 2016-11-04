@@ -11,33 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
 var forms_1 = require('@angular/forms');
-var awesome_pipe_1 = require('./awesome.pipe');
-var contact_component_1 = require('./contact.component');
-var contact_service_1 = require('./contact.service');
+var hero_component_1 = require('./hero.component');
+var hero_detail_component_1 = require('./hero-detail.component');
+var heroes_component_1 = require('./heroes.component');
 var highlight_directive_1 = require('./highlight.directive');
-var contact_routing_module_1 = require('./contact-routing.module');
-var ContactModule = (function () {
-    function ContactModule() {
+var hero_routing_module_1 = require('./hero-routing.module');
+var HeroModule = (function () {
+    function HeroModule() {
     }
-    ContactModule = __decorate([
+    HeroModule = __decorate([
         core_1.NgModule({
-            imports: [
-                common_1.CommonModule,
-                forms_1.FormsModule,
-                contact_routing_module_1.ContactRoutingModule
-            ],
+            imports: [common_1.CommonModule, forms_1.FormsModule, hero_routing_module_1.HeroRoutingModule],
             declarations: [
-                contact_component_1.ContactComponent,
-                highlight_directive_1.HighlightDirective,
-                awesome_pipe_1.AwesomePipe
-            ],
-            providers: [
-                contact_service_1.ContactService
+                hero_component_1.HeroComponent, hero_detail_component_1.HeroDetailComponent, heroes_component_1.HeroesComponent,
+                highlight_directive_1.HighlightDirective
             ]
         }), 
         __metadata('design:paramtypes', [])
-    ], ContactModule);
-    return ContactModule;
+    ], HeroModule);
+    return HeroModule;
 }());
-exports.ContactModule = ContactModule;
-//# sourceMappingURL=contact.module.js.map
+exports.HeroModule = HeroModule;
+//# sourceMappingURL=hero.module.js.map

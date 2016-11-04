@@ -12,6 +12,14 @@ var core_1 = require('@angular/core');
 //import { HEROES } from './mock-heroes';
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
+var Hero = (function () {
+    function Hero(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    return Hero;
+}());
+exports.Hero = Hero;
 var HeroService = (function () {
     function HeroService(http) {
         this.http = http;

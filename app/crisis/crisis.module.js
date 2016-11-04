@@ -9,20 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v3)';
+var common_1 = require('@angular/common');
+var crisis_list_component_1 = require('./crisis-list.component');
+var crisis_detail_component_1 = require('./crisis-detail.component');
+var crisis_service_1 = require('./crisis.service');
+var crisis_routing_module_1 = require('./crisis-routing.module');
+var CrisisModule = (function () {
+    function CrisisModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n    \t<nav>\n        <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n    \t\t<a routerLink=\"/crisis\" routerLinkActive=\"active\">Crisis</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
+    CrisisModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule, crisis_routing_module_1.CrisisRoutingModule],
+            declarations: [crisis_detail_component_1.CrisisDetailComponent, crisis_list_component_1.CrisisListComponent],
+            providers: [crisis_service_1.CrisisService]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], CrisisModule);
+    return CrisisModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisModule = CrisisModule;
+//# sourceMappingURL=crisis.module.js.map

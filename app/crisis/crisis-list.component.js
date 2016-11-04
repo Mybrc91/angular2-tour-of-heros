@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v3)';
+var crisis_service_1 = require('./crisis.service');
+var CrisisListComponent = (function () {
+    function CrisisListComponent(crisisService) {
+        this.crisisService = crisisService;
     }
-    AppComponent = __decorate([
+    CrisisListComponent.prototype.ngOnInit = function () {
+        this.crisises = this.crisisService.getCrises();
+    };
+    CrisisListComponent = __decorate([
         core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n    \t<nav>\n        <a routerLink=\"/contact\" routerLinkActive=\"active\">Contact</a>\n    \t\t<a routerLink=\"/crisis\" routerLinkActive=\"active\">Crisis</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
+            template: "\n    <h3 highlight>Crisis List</h3>\n    <div *ngFor='let crisis of crisises | async'>\n      <a routerLink=\"{{'../' + crisis.id}}\">{{crisis.id}} - {{crisis.name}}</a>\n    </div>\n  "
         }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+        __metadata('design:paramtypes', [crisis_service_1.CrisisService])
+    ], CrisisListComponent);
+    return CrisisListComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.CrisisListComponent = CrisisListComponent;
+//# sourceMappingURL=crisis-list.component.js.map
