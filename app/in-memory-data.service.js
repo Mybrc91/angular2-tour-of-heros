@@ -20,4 +20,4 @@ var InMemoryDataService = (function () {
     return InMemoryDataService;
 }());
 exports.InMemoryDataService = InMemoryDataService;
-//# sourceMappingURL=in-memor-data.service.js.map
+//# sourceMappingURL=in-memory-data.service.js.map
