@@ -17,6 +17,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 
+import { HighlightDirective } from './highlight.directive';
+import { TitleComponent } from './title.component';
+import { UserService } from './user.service';
+
+import { ContactModule } from './contact/contact.module';
 
 import './rxjs-extensions';
 
@@ -27,20 +32,24 @@ import './rxjs-extensions';
 @NgModule({
   imports:      [ 
 	BrowserModule,
-	FormsModule,
+  FormsModule, 
 	AppRoutingModule,
   HttpModule,
-  InMemoryWebApiModule.forRoot(InMemoryDataService)
+  InMemoryWebApiModule.forRoot(InMemoryDataService),
+  ContactModule
 	],
   declarations: [ 
   	AppComponent,
   	HeroesComponent ,
   	HeroDetailComponent,
   	DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HighlightDirective,
+    TitleComponent
   ],
   providers: [
-  	HeroService
+  	HeroService,
+    UserService,
   ],
 
   bootstrap: [ AppComponent ]

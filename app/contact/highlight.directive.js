@@ -9,20 +9,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v2)';
+var HighlightDirective = (function () {
+    function HighlightDirective(renderer, el) {
+        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'powderblue');
+        console.log("* Contact highlight called for " + el.nativeElement.tagName);
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n      <app-contact></app-contact>\n    \t<nav>\n    \t\t<a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    HighlightDirective = __decorate([
+        core_1.Directive({ selector: '[highlight], input' }), 
+        __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
+    ], HighlightDirective);
+    return HighlightDirective;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.HighlightDirective = HighlightDirective;
+//# sourceMappingURL=highlight.directive.js.map

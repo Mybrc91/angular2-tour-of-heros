@@ -9,20 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
-        this.subtitle = '(v2)';
+var AwesomePipe = (function () {
+    function AwesomePipe() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'my-app',
-            template: "\n    \t<app-title [subtitle]='subtitle'></app-title>\n      <app-contact></app-contact>\n    \t<nav>\n    \t\t<a routerLink=\"/dashboard\" routerLinkActive=\"active\">Dashboard</a>\n    \t\t<a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a>\n    \t</nav>\n    \t<router-outlet></router-outlet>\n  \t",
-            styleUrls: ['app.component.css']
-        }), 
+    AwesomePipe.prototype.transform = function (phrase) {
+        return phrase ? 'Awesome ' + phrase : '';
+    };
+    AwesomePipe = __decorate([
+        core_1.Pipe({ name: 'awesome' }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], AwesomePipe);
+    return AwesomePipe;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AwesomePipe = AwesomePipe;
+//# sourceMappingURL=awesome.pipe.js.map

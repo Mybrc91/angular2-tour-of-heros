@@ -4,7 +4,8 @@ import {Component} from '@angular/core';
 	moduleId: module.id,
 	selector: 'my-app',
   	template: `
-    	<h1>{{title}}</h1>
+    	<app-title [subtitle]='subtitle'></app-title>
+      <app-contact></app-contact>
     	<nav>
     		<a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
     		<a routerLink="/heroes" routerLinkActive="active">Heroes</a>
@@ -15,5 +16,5 @@ import {Component} from '@angular/core';
 })
 
 export class AppComponent{
-	title = 'Tour of Heroes';
+	subtitle = '(v2)';
 }
