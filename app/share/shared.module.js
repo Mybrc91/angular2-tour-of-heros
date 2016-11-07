@@ -9,16 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HighlightDirective = (function () {
-    function HighlightDirective(renderer, el) {
-        renderer.setElementStyle(el.nativeElement, 'backgroundColor', 'gold');
-        console.log("* AppRoot highlight called for " + el.nativeElement.tagName);
+var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
+var awesome_pipe_1 = require('./awesome.pipe');
+var highlight_directive_1 = require('./highlight.directive');
+var SharedModule = (function () {
+    function SharedModule() {
     }
-    HighlightDirective = __decorate([
-        core_1.Directive({ selector: '[highlight]' }), 
-        __metadata('design:paramtypes', [core_1.Renderer, core_1.ElementRef])
-    ], HighlightDirective);
-    return HighlightDirective;
+    SharedModule = __decorate([
+        core_1.NgModule({
+            imports: [common_1.CommonModule],
+            declarations: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective],
+            exports: [awesome_pipe_1.AwesomePipe, highlight_directive_1.HighlightDirective,
+                common_1.CommonModule, forms_1.FormsModule]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SharedModule);
+    return SharedModule;
 }());
-exports.HighlightDirective = HighlightDirective;
-//# sourceMappingURL=highlight.directive.js.map
+exports.SharedModule = SharedModule;
+//# sourceMappingURL=shared.module.js.map

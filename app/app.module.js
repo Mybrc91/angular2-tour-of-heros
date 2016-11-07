@@ -13,7 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require("@angular/http");
 var app_component_1 = require('./app.component');
-var highlight_directive_1 = require('./highlight.directive');
+var shared_module_1 = require('./share/shared.module');
 var title_component_1 = require('./title.component');
 var user_service_1 = require('./user.service');
 /* Feature Modules */
@@ -34,11 +34,11 @@ var AppModule = (function () {
                 app_routing_module_1.AppRoutingModule,
                 http_1.HttpModule,
                 contact_module_1.ContactModule,
-                angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
+                angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
+                shared_module_1.SharedModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                highlight_directive_1.HighlightDirective,
                 title_component_1.TitleComponent
             ],
             providers: [

@@ -7,7 +7,7 @@ import { HttpModule} from "@angular/http";
 
  
 import { AppComponent } from './app.component';
-import { HighlightDirective } from './highlight.directive';
+import { SharedModule } from './share/shared.module';
 import { TitleComponent } from './title.component';
 import { UserService } from './user.service';
 
@@ -33,11 +33,11 @@ import './rxjs-extensions';
 	AppRoutingModule,
   HttpModule,
   ContactModule,
-  InMemoryWebApiModule.forRoot(InMemoryDataService)
+  InMemoryWebApiModule.forRoot(InMemoryDataService),
+  SharedModule
 	],
   declarations: [ 
   	AppComponent,
-    HighlightDirective,
     TitleComponent
   ],
   providers: [
