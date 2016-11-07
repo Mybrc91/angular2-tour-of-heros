@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var hero_service_1 = require('./hero.service');
-var user_service_1 = require('../user.service');
+var user_service_1 = require('../core/user.service');
 var HeroComponent = (function () {
     function HeroComponent(userService) {
         this.userName = '';

@@ -1,15 +1,12 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
 import { HttpModule} from "@angular/http";
 
  
 import { AppComponent } from './app.component';
 import { SharedModule } from './share/shared.module';
-import { TitleComponent } from './title.component';
-import { UserService } from './user.service';
+import { CoreModule } from './core/core.module';
 
 /* Feature Modules */
 import { ContactModule } from './contact/contact.module';
@@ -29,19 +26,17 @@ import './rxjs-extensions';
 @NgModule({
   imports:      [ 
 	BrowserModule,
-  FormsModule, 
 	AppRoutingModule,
   HttpModule,
   ContactModule,
   InMemoryWebApiModule.forRoot(InMemoryDataService),
-  SharedModule
+  SharedModule,
+  CoreModule.forRoot({userName: 'Cheng zg'})
 	],
   declarations: [ 
   	AppComponent,
-    TitleComponent
   ],
   providers: [
-    UserService,
   ],
 
   bootstrap: [ AppComponent ]

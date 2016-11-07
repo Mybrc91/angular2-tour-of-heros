@@ -10,12 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
-var forms_1 = require('@angular/forms');
 var http_1 = require("@angular/http");
 var app_component_1 = require('./app.component');
 var shared_module_1 = require('./share/shared.module');
-var title_component_1 = require('./title.component');
-var user_service_1 = require('./user.service');
+var core_module_1 = require('./core/core.module');
 /* Feature Modules */
 var contact_module_1 = require('./contact/contact.module');
 /* Routing Module */
@@ -30,20 +28,17 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
-                forms_1.FormsModule,
                 app_routing_module_1.AppRoutingModule,
                 http_1.HttpModule,
                 contact_module_1.ContactModule,
                 angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
-                shared_module_1.SharedModule
+                shared_module_1.SharedModule,
+                core_module_1.CoreModule.forRoot({ userName: 'Cheng zg' })
             ],
             declarations: [
                 app_component_1.AppComponent,
-                title_component_1.TitleComponent
             ],
-            providers: [
-                user_service_1.UserService,
-            ],
+            providers: [],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
