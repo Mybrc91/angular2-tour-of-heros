@@ -53,7 +53,7 @@ var HeroesComponent = (function () {
         this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
     };
     HeroesComponent.prototype.gotoDetail = function () {
-        //this.router.navigate(['/detail' , this.selectedHero.id]);
+        this.router.navigate(['/heroes', this.selectedHero.id]);
     };
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
@@ -66,7 +66,7 @@ var HeroesComponent = (function () {
             templateUrl: 'heroes.component.html',
             styleUrls: ['heroes.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, hero_service_1.HeroService])
+        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
     ], HeroesComponent);
     return HeroesComponent;
 }());

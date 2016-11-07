@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { Hero,HeroService } from './hero.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   //providers : [HeroService],		
@@ -17,7 +17,7 @@ export class HeroesComponent implements OnInit{
 	}
 
 	constructor(
-		private router: ActivatedRoute,
+		private router: Router,
 		private heroService :HeroService){};
 
 	add(name: String):void{
@@ -47,7 +47,7 @@ export class HeroesComponent implements OnInit{
   	}
 
   	gotoDetail(): void{
-  		//this.router.navigate(['/detail' , this.selectedHero.id]);
+  		this.router.navigate(['/heroes' , this.selectedHero.id]);
   	}
 
 	title = 'Tour of Heroes';

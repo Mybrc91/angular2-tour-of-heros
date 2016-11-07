@@ -20,6 +20,8 @@ var user_service_1 = require('./user.service');
 var contact_module_1 = require('./contact/contact.module');
 /* Routing Module */
 var app_routing_module_1 = require('./app-routing.module');
+var angular2_in_memory_web_api_1 = require('angular2-in-memory-web-api');
+var in_memory_data_service_1 = require('./in-memory-data.service');
 require('./rxjs-extensions');
 var AppModule = (function () {
     function AppModule() {
@@ -31,7 +33,8 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 app_routing_module_1.AppRoutingModule,
                 http_1.HttpModule,
-                contact_module_1.ContactModule
+                contact_module_1.ContactModule,
+                angular2_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService)
             ],
             declarations: [
                 app_component_1.AppComponent,

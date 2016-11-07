@@ -16,6 +16,10 @@ import { ContactModule } from './contact/contact.module';
 /* Routing Module */
 import { AppRoutingModule } from './app-routing.module';
 
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+
+import { InMemoryDataService } from './in-memory-data.service';
+
 import './rxjs-extensions';
 
 
@@ -28,7 +32,8 @@ import './rxjs-extensions';
   FormsModule, 
 	AppRoutingModule,
   HttpModule,
-  ContactModule
+  ContactModule,
+  InMemoryWebApiModule.forRoot(InMemoryDataService)
 	],
   declarations: [ 
   	AppComponent,
