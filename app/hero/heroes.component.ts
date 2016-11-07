@@ -17,6 +17,7 @@ export class HeroesComponent implements OnInit{
 	}
 
 	constructor(
+		private router: Router,
 		private heroService :HeroService){};
 
 	add(name: String):void{
