@@ -2,3 +2,5 @@
 *.map
 *.log.*
 *.log
+*.js
+!.*js
