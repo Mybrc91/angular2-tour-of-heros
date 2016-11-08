@@ -16,7 +16,16 @@ var Hero = (function () {
     function Hero(id, name) {
         this.id = id;
         this.name = name;
+        this.state = "active";
     }
+    Hero.prototype.toggleState = function () {
+        if (this.state == "active") {
+            this.state = "inactive";
+        }
+        else
+            this.state = "active";
+        console.log("state==" + this.state);
+    };
     return Hero;
 }());
 exports.Hero = Hero;
